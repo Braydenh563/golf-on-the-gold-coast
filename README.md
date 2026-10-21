@@ -69,9 +69,51 @@ cd golf-on-the-gold-coast
 
 Code is released under the [MIT Licence](LICENSE). The written content, including the design rationale, is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Images belong to their respective owners (see below).
 
-## Image credits
+## References
 
-<!-- List the source for each image, e.g. "Photo by Name on Unsplash" -->
+### Photos
+
+All photos are from [Unsplash](https://unsplash.com/) and used under the Unsplash licence.
+
+- Anderson, A. (2021). *a couple of men standing on top of a lush green field* [Photograph of golfers on a coastal course]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/6I0LxsA7Pd4
+- Drew, P. (2021). *a man hitting a golf ball with a golf club* [Photograph of a golfer hitting a ball out of a bunker]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/C5B3AMsBep8
+- Hewines, M. (2019). *man playing golf during daytime* [Photograph of a golfer hitting from a Topgolf-style bay]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/1r2UHeyODRY
+- Nickerson, C. (2021). *a group of young women standing next to each other* [Photograph of a group of friends on a golf course]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/U-z0q8ah6wQ
+- Rosar, F. (2024). *A man standing on top of a green golf course* [Photograph of a golfer tossing a ball beside the flag]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/PRIZylGN87Q
+- Stenholm, D. (2022). *a fishing net on a field* [Photograph of a bucket of golf balls beside a club]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/1oZamY4tkbw
+- Wendler, B. (2024). *a view of a golf course from the green* [Photograph of a golf course fairway at sunset]. Unsplash. Retrieved October 16, 2026, from https://unsplash.com/photos/RI5g7U0kwpM
+
+### Icons, fonts and maps
+
+- Font Awesome. (2026). *Icons* (Version 4.7). Retrieved October 6, 2026, from https://fontawesome.com/v4/icons/
+- Google. (2026). *Google Fonts*. Retrieved October 6, 2026, from https://fonts.google.com/
+- Google. (2026). *Google Maps* [Interactive maps]. Retrieved October 18, 2026, from https://www.google.com/maps
+
+### Venue information
+
+<details>
+<summary>Show all 17 venue sources</summary>
+
+All retrieved October 18, 2026.
+
+- Boomerang Hills. (2026). *Boomerang Hills: Golf course, putt putt, restaurant & bar*. https://boomeranghills.com.au/
+- Boomerang Hills. (2026). *Golf course*. https://boomeranghills.com.au/golf-course/
+- Boomerang Hills. (2026). *Putt putt course*. https://boomeranghills.com.au/putt-putt/
+- Emerald Lakes Golf Club. (2026). *Driving range*. https://emeraldlakesgolf.com.au/golf/driving-range/
+- Jones, M. (2026). *Boomerang Hills golf course*. Gold Coast Point. https://www.goldcoastpoint.com.au/attractions/boomerang-farm-golf-course/
+- KDV Sport. (2026). *About*. https://kdvsport.com/about/
+- KDV Sport. (2026). *Contact*. https://kdvsport.com/about/contact/
+- KDV Sport. (2026). *Golf*. https://kdvsport.com/golf/
+- KDV Sport. (2026). *Hit day or night at the best Gold Coast driving range*. https://kdvsport.com/golf/driving-range/
+- KDV Sport. (2026). *No.1 private golf coaching lessons Gold Coast*. https://kdvsport.com/golf-academy/private-golf-coaching/
+- Parkwood Village. (2026). *Parkwood golf club: 18 holes Gold Coast golf course*. https://theclubparkwood.com.au/pages/parkwood-golf-club
+- Topgolf Gold Coast. (2026). *Contact Topgolf Gold Coast for enquiries and assistance*. https://topgolf.com.au/contact
+- Topgolf Gold Coast. (2026). *Experience Topgolf Gold Coast: Beginner's guide*. https://topgolf.com.au/experience
+- Topgolf Gold Coast. (2026). *Frequently asked questions (FAQ) at Topgolf Gold Coast*. https://topgolf.com.au/faq
+- Topgolf Gold Coast. (2026). *Location and information for Topgolf Gold Coast*. https://topgolf.com.au/location-and-info
+- Topgolf Gold Coast. (2026). *Pricing at Topgolf Gold Coast*. https://topgolf.com.au/pricing
+
+</details>
 
 ## Author
 
