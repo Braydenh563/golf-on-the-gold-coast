@@ -5,7 +5,7 @@
 <h1 align="center">Golf on the Gold Coast</h1>
 
 <p align="center">
-  <em>A multi-page, responsive website guiding visitors to golf courses and driving ranges on the Gold Coast, Queensland.</em>
+  <em>An 8-page, responsive HTML + CSS website design concept, intended to guide teens aged 13-17 who are visiting or live on the Gold Coast to a curated selection of local golf courses and driving ranges. </em>
 </p>
 
 <p align="center">
