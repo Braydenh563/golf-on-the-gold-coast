@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="images/logo-cropped.png" alt="Golf on the Gold Coast logo" width="400">
+</p>
+
+<h1 align="center">Golf on the Gold Coast</h1>
+
 # Golf on the Gold Coast
 
 A multi-page, responsive website guiding visitors to golf courses and driving ranges on the Gold Coast, Queensland.
