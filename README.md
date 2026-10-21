@@ -9,15 +9,16 @@
 </p>
 
 <p align="center">
-  <a href="https://braydenh563.github.io/golf-on-the-gold-coast/"><strong>View the live site →</strong></a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/HTML5-4c5b34?logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-edb92b?logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/Responsive-mobile--first-4c5b34" alt="Responsive, mobile-first">
   <img src="https://img.shields.io/badge/License-MIT-edb92b" alt="MIT licence">
 </p>
+
+<p align="center">
+  <a href="https://braydenh563.github.io/golf-on-the-gold-coast/"><strong>View the live site →</strong></a>
+</p>
+
 
 <!-- Add 1-2 screenshots here (desktop + mobile), e.g.
 <p align="center">
