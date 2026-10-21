@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Brayden Hoyle">
+    <meta name="description" content="Find driving ranges and golf courses on the Gold Coast made for teens.">
+
+    <title>Home | Golf on the Gold Coast</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- Skip to content link/button -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Logo header -->
+    <header class="logo-header">
+        <a class="logo" href="index.html">
+            <img src="images/logo-cropped.png" alt="Golf on the Gold Coast home">
+        </a>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section" aria-label="Page introduction">
+        <img class="hero-image hero-image-higher" src="images/hero-golfer-swing.jpg"
+            alt="A golfer at the end of their swing on a golf course">
+
+        <ul class="badges">
+            <!-- Badges with icons -->
+            <li><span class="material-icons" aria-hidden="true">groups</span> Ages 13-17</li>
+            <li><span class="material-icons" aria-hidden="true">location_on</span> Gold Coast</li>
+        </ul>
+
+        <hgroup class="hero-text">
+            <h1>Golf on the <span class="highlight">Gold Coast</span></h1>
+            <p>Choose a range or course to plan a golf day with your mates on the GC.</p>
+        </hgroup>
+
+        <a class="button" href="#where-to-play">Plan your game <span aria-hidden="true">➜</span></a>
+    </section>
+
+    <div class="page-container">
+        <!-- Main navigation -->
+        <nav class="site-nav" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="driving-ranges.html">Driving Ranges</a></li>
+                <li><a href="golf-courses.html">Golf Courses</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main page content -->
+        <main id="main" tabindex="-1">
+
+            <!-- Intro heading card and cool feature cards -->
+            <section class="card introduction">
+                <header class="intro-text">
+                    <h2>Your next day of golf starts here</h2>
+                    <p>New to to the sport? Compare the local Gold Coast driving ranges & golf courses, when planning
+                        your visit.</p>
+                    <p>Are you aged 13-17? Check out the pricing & age rules to find a suitable activity for your group.
+                    </p>
+                </header>
+
+                <ul class="feature-list">
+                    <li class="feature-card">
+                        <span class="material-icons" aria-hidden="true">sports_golf</span>
+                        <hgroup>
+                            <h3>Practise Your Swing</h3>
+                            <p>Warm up at a driving range before you try a full course. </p>
+                        </hgroup>
+                    </li>
+                    <li class="feature-card">
+                        <span class="material-icons" aria-hidden="true">groups</span>
+                        <hgroup>
+                            <h3>Bring Your Friends</h3>
+                            <p>Share a bay with up to six players at Topgolf Gold Coast, using the integrated TopTracer
+                                systems for measured statistics.
+                            </p>
+                        </hgroup>
+                    </li>
+                    <li class="feature-card">
+                        <span class="material-icons" aria-hidden="true">school</span>
+                        <hgroup>
+                            <h3>Learn Something New</h3>
+                            <p>Beginner lessons & junior coaching can help guide you in the beginning of your golfing
+                                journey.
+                            </p>
+                        </hgroup>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Why each category cards -->
+            <section class="card alternating-sides" id="where-to-play">
+                <article class="split">
+                    <img class="crop-higher" src="images/range-balls-and-club.jpg"
+                        alt="A bucket of golf balls tipped over beside a golf club on the grass">
+                    <section class="split-text">
+                        <h2>Why a driving range?</h2>
+                        <p>Practise without stress and less walk. KDV Sport provides balla & club hire, with Topgolf
+                            Gold Coast featuring a wide variety of scroing gamemodes. See prices and age rules. </p>
+                        <a class="button" href="driving-ranges.html">View driving ranges <span
+                                aria-hidden="true">➜</span></a>
+                    </section>
+                </article>
+
+                <article class="split split-flipped">
+                    <img class="crop-higher" src="images/group-of-friends-on-golf-course.jpg"
+                        alt="Four friends laughing together on a golf course">
+                    <section class="split-text">
+                        <h2>Why a golf course?</h2>
+                        <p>Play a real round on a fully fledged course. Book your tee times online at Parkwood, choose
+                            Boomerang Hills for a more hinterland vibe. Check their availability, hire and junior member
+                            rules.
+                        </p>
+                        <a class="button" href="golf-courses.html">View golf courses <span
+                                aria-hidden="true">➜</span></a>
+                    </section>
+                </article>
+            </section>
+
+            <hr>
+
+            <!-- Lesson card & contact form -->
+            <div class="action-row">
+                <aside class="card lessons">
+                    <header class="lessons-banner">
+                        <img src="images/golfers-on-coastal-course.jpg" alt="">
+                        <h2>Want some lessons?</h2>
+                        <p>New to golf? Ask which beginner lessons or junior coaching best suit your age and level of
+                            experience.
+                        </p>
+                    </header>
+                    <a class="button button-block" href="#contact-form">Ask about lessons <span
+                            aria-hidden="true">➜</span></a>
+                </aside>
+
+                <section class="card contact-form" id="contact-form">
+                    <h2>Ask a local for tips</h2>
+                    <p>All fields are required.</p>
+
+                    <!-- Contact form -->
+                    <form action="#" method="post">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" autocomplete="email" required>
+
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+                        <button class="button button-block" type="submit">Send message</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Closing amazing and phrase that sticks with you :D -->
+            <section class="card closing-phrase">
+                <h2>Take your first swing</h2>
+                <p>Pick a venue, check the details, and plan your best day out yet! One that works for you and your
+                    mates.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Golf on the Gold Coast | Brayden Hoyle | QUT DXB111 A2 Project</p>
+        <p><a href="about.html#credits">Image credits &amp; references</a></p>
+    </footer>
+</body>
+
+</html>

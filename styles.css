@@ -1,0 +1,817 @@
+/*
+Brayden Hoyle | n11967340
+Golf on the Gold Coast | DXB111 Assessment 2
+*/
+
+/* CSS variables */
+:root {
+    /* Colour Palette */
+    --cornsilk: #FCF8D9;
+    --deep-forest: #18442A;
+    --palm-leaf: #788C59;
+    --palm-leaf-dark: #5E7040;
+    --jet-black: #2D3A3A;
+    --porcelain: #FCFFFC; 
+
+    /* Colour Uses */
+    --page-background: var(--cornsilk);
+    --card-background: var(--porcelain);
+    --main-text: #1A1A1A;
+    --buttons-and-links: var(--deep-forest);
+    --focus-colour: var(--deep-forest);
+    --borders: var(--jet-black);
+    --highlight-colour: gold;
+
+    /* Spacing range/scale */
+    --space-tiny: 4px;
+    --space-small: 8px;
+    --space-medium: 16px;
+    --space-large: 32px;
+    --space-humongous: 64px;
+
+    /* Font sizes (note: rem = scale with user's browser settings :D -> 16px = 1 rem approx.) */
+    --text-small: 0.875rem;
+    /* 14px / 16px = 0.875 */
+    --text-normal: 1rem;
+    /* 16px */
+    --text-large: 1.25rem;
+    /* 20px */
+    --text-heading: 2.25rem;
+    /* 36px */
+    --text-hero: 2.25rem;
+    /* HUMONGOUS hero heading */
+
+    /* Shapes & Layout */
+    --round-button: 8px;
+    --round-card: 24px;
+    --round-full: 999px;
+    --max-page-width: 1200px;
+    --header-height: 70px;
+    --nav-top: 78px;
+    /* height of header + an 8px gap */
+
+    /* Z-Index layers - Note: higher numbers are closer to the user/front */
+    --z-hero-image: -10;
+    /* Hero and lesson card photo(s) */
+    --z-hero: 0;
+    /* hero-section & lessons-banner */
+    --z-nav: 10;
+    --z-logo-header: 15;
+    --z-skip-link: 20;
+
+    --font-family: system-ui, sans-serif;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 170px;
+    /* make same page nav links account for the height and padding of the site nav when calculating scroll position */
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--text-normal);
+    /* 1rem to fit to device resolution appropriately */
+    line-height: 1.5;
+    /* Make it comfortable to read and match WCAG guidelines */
+    color: var(--main-text);
+    /* near black */
+    background-color: var(--page-background);
+    /* cornsilk / cream colour */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    /* ensure images dont overflow */
+    height: auto;
+}
+
+/* Colour all hyperlinks the forest green :) */
+a {
+    color: var(--buttons-and-links);
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus-colour);
+    /* use an outline instead of border as borders take up space whereas outlines dont*/
+    outline-offset: 3px;
+    /* move the outline away from the element to avoid squashing text or borders */
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--z-skip-link);
+
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+
+    background-color: var(--card-background);
+    color: var(--main-text);
+
+    transform: translateY(-100%);
+    /* send it off screen */
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+    /* bring it back when focused on */
+}
+
+/* Logo header */
+.logo-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-logo-header);
+    display: flex;
+    justify-content: center;
+    /* padding: var(--space-small); */
+    /* 8px padding around logo for extra space */
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--borders);
+}
+
+/* Logo dimensions / sizing */
+.logo-header img {
+    height: var(--header-height);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    /* box for hero image to be within */
+    z-index: var(--z-hero);
+
+    display: flex;
+    flex-direction: column;
+    /* stack on top in a column */
+    justify-content: flex-end;
+    /* text sits at the bottom */
+    gap: var(--space-medium);
+    min-height: 460px;
+    /* 256px, 384px, 460px */
+
+    padding-top: var(--space-medium);
+    padding-bottom: 56px;
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+
+    color: var(--card-background);
+}
+
+.hero-image,
+.lessons-banner img {
+    position: absolute;
+    /* Make sure the image doesnt effect the other objects around it, take it out of the document flow */
+    inset: 0;
+    /* set top, bottom, left, and right all to 0 */
+    z-index: var(--z-hero-image);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* crop the image in order to fill the container without stretching it */
+    filter: brightness(0.45);
+    /* dark tint over photo for more readable text */
+}
+
+/* right, up/down */
+.hero-image-lower {
+    object-position: 65% 55%;
+}
+
+.hero-image-higher {
+    object-position: 65% 32%;
+}
+
+.hero-image-even-higher {
+    object-position: 65% 38%;
+}
+
+/* Hero text badges in pill-like shape  */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    /* wrap flex content onto new line */
+    gap: var(--space-small);
+    list-style: none;
+    /* removes the dot points */
+}
+
+.badges li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-tiny);
+
+    padding-top: var(--space-tiny);
+    padding-bottom: var(--space-tiny);
+    padding-left: var(--space-small);
+    padding-right: var(--space-medium);
+
+    border: 1px solid var(--card-background);
+    border-radius: var(--round-full);
+
+    font-size: var(--text-small);
+}
+
+.badges .material-icons {
+    font-size: var(--text-large);
+    /* Ensure icons are the same size as the text font */
+}
+
+/* Hero heading & subtext */
+.hero-text h1 {
+    font-size: var(--text-hero);
+    line-height: 1.1;
+}
+
+.hero-text p {
+    margin-top: var(--space-small);
+    font-style: italic;
+}
+
+/* Colour text gold to make it stand out and keep the Gold Coast motif */
+.highlight {
+    color: var(--highlight-colour);
+}
+
+/* Colour hero texr hyperlinks */
+.hero-text a {
+    color: var(--card-background);
+}
+
+/* Make sure proper outline colour for appropriate contrast */
+.hero-section :focus-visible {
+    outline-color: var(--card-background);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    align-self: flex-start;
+    /* prevent it from stretching to the max width within a column */
+
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
+    padding-left: var(--space-small);
+    padding-right: var(--space-small);
+
+    background-color: var(--card-background);
+    color: var(--main-text);
+
+    border: 2px solid var(--main-text);
+    border-radius: var(--round-button);
+
+    text-decoration: none;
+    /* remove the hyperlink underline */
+    font: inherit;
+    /* Keep all the button text links the same font like for the submit button in the contact form */
+}
+
+.button:hover {
+    background-color: var(--palm-leaf-dark);
+    color: var(--card-background);
+}
+
+.button-primary {
+    background-color: var(--buttons-and-links);
+    color: var(--card-background);
+    border-color: var(--buttons-and-links);
+}
+
+.button-primary:hover {
+    background-color: var(--palm-leaf-dark);
+    border-color: var(--palm-leaf-dark);
+}
+
+.hero-section .button:hover {
+    background-color: var(--highlight-colour);
+    color: var(--main-text);
+}
+
+/* Make sure the displayed page content is at a reasonably readable width and that it is proeprly centred */
+.page-container {
+    max-width: var(--max-page-width);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+}
+
+/* Sticky nav */
+.site-nav {
+    position: sticky;
+    top: var(--nav-top);
+    z-index: var(--z-nav);
+
+    margin-top: -32px;
+    /* move it up to have it overlap and sit halfway along the bottom edge of the hero section */
+    padding: var(--space-small);
+
+    background-color: var(--card-background);
+
+    border: 2px solid var(--borders);
+    border-radius: var(--round-full);
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.site-nav li {
+    display: flex;
+    flex: 1;
+}
+
+.site-nav a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
+    padding-left: var(--space-tiny);
+    padding-right: var(--space-tiny);
+
+    border-radius: var(--round-full);
+
+    color: var(--main-text);
+
+    font-size: var(--text-small);
+    text-align: center;
+    text-decoration: none;
+}
+
+.site-nav a:hover {
+    background-color: var(--palm-leaf-dark);
+    color: var(--card-background);
+}
+
+.site-nav a[aria-current="page"],
+.site-nav a.active-category {
+    background-color: var(--buttons-and-links);
+    color: var(--card-background);
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-large);
+    padding-top: var(--space-large);
+    padding-bottom: var(--space-large);
+}
+
+/* The skip link moves the focus to the main section */
+main:focus {
+    outline: none;
+}
+
+/* Breadcrumbs */
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-small);
+    list-style: none;
+}
+
+.breadcrumbs li {
+    display: flex;
+    gap: var(--space-small);
+}
+
+.breadcrumbs li:not([aria-current])::after {
+    content: "/";
+    /* draw the / (looks cooler than a chevron) breadcrumb separately */
+}
+
+.breadcrumbs [aria-current="page"] {
+    font-weight: 600;
+    /* Semi-bold */
+}
+
+/* Divider line */
+hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--borders);
+}
+
+/* Shared card look */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+
+    padding: var(--space-medium);
+
+    background-color: var(--card-background);
+
+    border: 2px solid var(--borders);
+    border-radius: var(--round-card);
+    box-shadow: 4px 4px 0 var(--borders);
+    /* across, down, blur, and colour */
+}
+
+/* Text blocks with heading and paragraphs that are stacked */
+.intro-text,
+.split-text,
+.category-heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+}
+
+.references ul {
+    padding-left: var(--space-large);
+    overflow-wrap: anywhere;
+    /* make sure URLs dont overflow */
+}
+
+/* Intro card */
+.introduction {
+    gap: var(--space-medium);
+}
+
+/* Lists of small boxes (no dots) */
+.feature-list,
+.fact-list,
+.link-list {
+    display: flex;
+    gap: var(--space-small);
+    list-style: none;
+}
+
+.feature-list,
+.fact-list {
+    flex-direction: column;
+}
+
+.feature-card,
+.fact-card {
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+
+    background-color: var(--page-background);
+    border: 2px solid var(--borders);
+    border-radius: var(--round-button);
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-medium);
+}
+
+.feature-card .material-icons {
+    width: 2.5rem;
+    color: var(--buttons-and-links);
+    font-size: var(--text-heading);
+    text-align: center;
+}
+
+.feature-card hgroup {
+    flex: 1;
+}
+
+/* Cards each with an image and block fo text */
+.alternating-sides {
+    gap: var(--space-large);
+}
+
+.split {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+}
+
+.split img,
+.location-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border: 2px solid var(--borders);
+    border-radius: var(--round-card);
+}
+
+.crop-higher {
+    object-position: center 29%;
+}
+
+/* Lessons card & contact form (they alight with each other horizontally on the larger screen resolutions) */
+.action-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-large);
+}
+
+.lessons {
+    gap: var(--space-medium);
+}
+
+.lessons-banner {
+    position: relative;
+    z-index: var(--z-hero);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--space-small);
+    flex: 1;
+    min-height: 256px;
+    padding: var(--space-medium);
+
+    overflow: hidden;
+
+    background-color: var(--buttons-and-links);
+    color: var(--card-background);
+
+    border-radius: var(--round-card);
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Contact form */
+.contact-form h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-tiny);
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    margin-bottom: var(--space-medium);
+    padding: var(--space-small);
+
+    background-color: var(--card-background);
+    color: inherit;
+
+    font: inherit;
+
+    border: 2px solid var(--borders);
+    border-radius: var(--round-button);
+}
+
+textarea {
+    min-height: 144px;
+    resize: vertical;
+}
+
+/* Closing phrase */
+.closing-phrase {
+    text-align: center;
+}
+
+.location-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+}
+
+.location-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-large);
+    list-style: none;
+}
+
+.location-card h3 {
+    font-size: var(--text-large);
+}
+
+.location-card .button {
+    margin-top: auto;
+}
+
+.category-switch .button {
+    align-self: stretch;
+    text-align: center;
+}
+
+/* Location pages: quick facts */
+.facts {
+    gap: var(--space-medium);
+}
+
+.fact-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: var(--space-small);
+    row-gap: var(--space-tiny);
+}
+
+.fact-card .material-icons {
+    width: 1.5rem;
+    color: var(--buttons-and-links);
+    font-size: var(--text-large);
+    text-align: center;
+}
+
+.fact-card strong {
+    flex: 1;
+}
+
+.fact-card p {
+    width: 100%;
+}
+
+/* Website / Directions / Instagram link cards */
+.link-list li {
+    display: flex;
+    flex: 1;
+}
+
+.link-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-small);
+    min-height: 104px;
+
+    padding: var(--space-medium);
+
+    background-color: var(--card-background);
+    color: var(--main-text);
+
+    border: 2px solid var(--borders);
+    border-radius: var(--round-card);
+    box-shadow: 3px 3px 0 var(--borders);
+
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.link-card .material-icons,
+.link-card .fa {
+    font-size: var(--text-heading);
+}
+
+.link-card:hover {
+    background-color: var(--palm-leaf-dark);
+    color: var(--card-background);
+}
+
+/* Google Map */
+.card iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: var(--round-button);
+}
+
+/* Footer */
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-tiny);
+
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+
+    background-color: var(--card-background);
+
+    border-top: 2px solid var(--borders);
+
+    text-align: center;
+}
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+
+    :root {
+        --text-hero: 3rem;
+    }
+
+    .hero-section {
+        min-height: 500px;
+        padding-left: var(--space-large);
+        padding-right: var(--space-large);
+    }
+
+    .feature-list {
+        flex-direction: row;
+    }
+
+    .feature-card {
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Image and text side by side with every second block flipped */
+    .split {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .split img,
+    .split-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .split-flipped {
+        flex-direction: row-reverse;
+    }
+
+    .location-list {
+        flex-direction: row;
+        gap: var(--space-medium);
+    }
+
+    .location-card {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .location-card img {
+        height: 170px;
+    }
+}
+
+/* Desktop: 1200px higher/larger */
+@media (min-width: 1200px) {
+
+    :root {
+        --text-hero: 3.5rem;
+    }
+
+    .hero-section {
+        min-height: 352px;
+        padding-left: var(--space-humongous);
+        padding-right: var(--space-humongous);
+    }
+
+    /* Intro text on the left with the feature cards being stacked to the right */
+    .introduction {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .intro-text,
+    .feature-list {
+        flex: 1;
+    }
+
+    .feature-list {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .action-row {
+        flex-direction: row;
+    }
+
+    .lessons,
+    .contact-form {
+        flex: 1;
+    }
+
+    /* Quick facts wrap in flexbox rows for better readability */
+    .fact-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .fact-card {
+        width: 30%;
+        flex-grow: 1;
+        align-content: flex-start;
+    }
+}
