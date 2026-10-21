@@ -4,14 +4,25 @@
 
 <h1 align="center">Golf on the Gold Coast</h1>
 
-# Golf on the Gold Coast
+<p align="center">
+  <em>A multi-page, responsive website guiding visitors to golf courses and driving ranges on the Gold Coast, Queensland.</em>
+</p>
 
-A multi-page, responsive website guiding visitors to golf courses and driving ranges on the Gold Coast, Queensland.
+<p align="center">
+  <a href="https://braydenh563.github.io/golf-on-the-gold-coast/"><strong>View the live site →</strong></a>
+</p>
 
-**[View the live site](https://braydenh563.github.io/golf-on-the-gold-coast/)**
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-4c5b34?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-edb92b?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Responsive-mobile--first-4c5b34" alt="Responsive, mobile-first">
+  <img src="https://img.shields.io/badge/License-MIT-edb92b" alt="MIT licence">
+</p>
 
 <!-- Add 1-2 screenshots here (desktop + mobile), e.g.
-![Home page on desktop](docs/screenshot-desktop.png)
+<p align="center">
+  <img src="docs/screenshot-desktop.png" alt="Home page on desktop" width="700">
+</p>
 -->
 
 ## About
